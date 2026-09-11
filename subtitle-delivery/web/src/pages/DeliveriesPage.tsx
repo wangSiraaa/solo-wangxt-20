@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { api, ApiError } from '../api';
 import { Delivery, Impact, Project } from '../types';
 
@@ -108,8 +108,8 @@ export default function DeliveriesPage({ project }: { project: Project }) {
           </thead>
           <tbody>
             {deliveries.map((d) => (
-              <>
-                <tr key={d.id}>
+              <Fragment key={d.id}>
+                <tr>
                   <td><span className="badge info">{d.language}</span></td>
                   <td>V{d.version_no} {d.version_label}</td>
                   <td className="mono">{d.glossary_snapshot_id.slice(0, 8)}…</td>
@@ -127,13 +127,13 @@ export default function DeliveriesPage({ project }: { project: Project }) {
                   </td>
                 </tr>
                 {impacts[d.id] && (
-                  <tr key={`${d.id}-impact`}>
+                  <tr>
                     <td colSpan={6}>
                       <ImpactView impact={impacts[d.id]} />
                     </td>
                   </tr>
                 )}
-              </>
+              </Fragment>
             ))}
             {!deliveries.length && (
               <tr><td colSpan={6} className="muted">还没有交付记录</td></tr>

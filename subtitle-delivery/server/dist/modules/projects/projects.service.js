@@ -7,15 +7,24 @@ class ProjectsService {
     constructor(db) {
         this.db = db;
     }
+    /** target_languages 在库中是 JSON 字符串，对外统一解析为数组 */
+    parseProject(p) {
+        return {
+            ...p,
+            target_languages: typeof p.target_languages === 'string'
+                ? JSON.parse(p.target_languages)
+                : p.target_languages,
+        };
+    }
     async list() {
-        return this.db.query(`SELECT * FROM projects ORDER BY created_at`);
+        const rows = await this.db.query(`SELECT * FROM projects ORDER BY created_at`);
+        return rows.map((p) => this.parseProject(p));
     }
     async get(id) {
         const rows = await this.db.query(`SELECT * FROM projects WHERE id=$1`, [id]);
         if (!rows[0])
             throw new Error(`项目不存在: ${id}`);
-        const p = rows[0];
-        return { ...p, target_languages: JSON.parse(p.target_languages) };
+        return this.parseProject(rows[0]);
     }
     async create(name, sourceLanguage, targetLanguages, id) {
         const pid = id ?? (0, timecode_1.uuid)();
