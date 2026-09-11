@@ -1,0 +1,16 @@
+{
+  "name": "subtitle-delivery",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "setup": "npm install",
+    "build": "npm run build -w server && npm run build -w web",
+    "dev:server": "npm run start:dev -w server",
+    "dev:web": "npm run dev -w web",
+    "test": "npm test -w server"
+  }
+}

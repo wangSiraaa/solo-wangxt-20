@@ -1,0 +1,20 @@
+# Local dependency caches
+node_modules/
+
+# Local secrets and connection settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+
+# Runtime database and generated delivery files
+subtitle-delivery/server/data/pg/
+subtitle-delivery/server/data/deliveries/
+*.log
+
+# Local OS files
+.DS_Store

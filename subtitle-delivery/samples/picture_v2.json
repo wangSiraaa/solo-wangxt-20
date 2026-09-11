@@ -1,0 +1,21 @@
+{
+  "label": "V2 导演剪辑版",
+  "shots": [
+    { "shotNo": 1, "inMs": 0, "outMs": 30000 },
+    { "shotNo": 2, "inMs": 30000, "outMs": 42000 },
+    { "shotNo": 3, "inMs": 42000, "outMs": 77000 },
+    { "shotNo": 4, "inMs": 77000, "outMs": 112000 },
+    { "shotNo": 5, "inMs": 112000, "outMs": 152000 }
+  ],
+  "segments": [
+    { "segNo": 1, "startMs": 2000, "endMs": 6000, "sourceText": "各位乘客，末班车即将发车。" },
+    { "segNo": 2, "startMs": 8000, "endMs": 12000, "sourceText": "请保管好您的车票和随身物品。" },
+    { "segNo": 3, "startMs": 44000, "endMs": 48000, "sourceText": "列车长，货舱的灯还亮着。" },
+    { "segNo": 4, "startMs": 52000, "endMs": 56000, "sourceText": "别管了，我们到站再查。" },
+    { "segNo": 5, "startMs": 75000, "endMs": 79000, "sourceText": "你听到铁轨的声音了吗？" },
+    { "segNo": 6, "startMs": 82000, "endMs": 87000, "sourceText": "像有人在敲。" },
+    { "segNo": 7, "startMs": 114000, "endMs": 118000, "sourceText": "站台上那个人，昨晚也在。" },
+    { "segNo": 8, "startMs": 122000, "endMs": 127000, "sourceText": "别回头。继续走。" },
+    { "segNo": 9, "startMs": 34000, "endMs": 38000, "sourceText": "这座城市从不睡觉。" }
+  ]
+}
